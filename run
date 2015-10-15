@@ -1,0 +1,11 @@
+#!/bin/bash
+set -e
+
+if [ "$1" == "-h" ] ; then
+    echo "Usage: `basename $0` [-h] <repository>"
+    echo "\t<repository>: an URL to a Git repository"
+    exit 0
+fi
+
+echo "Preparing to clone '$1' into '/data'"
+exec git clone $1 /data
